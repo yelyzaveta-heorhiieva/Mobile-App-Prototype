@@ -315,7 +315,7 @@ button {
 }
 
 @media (min-resolution: 192dpi) {
-  .hero {
+  .features {
     background-image: url(../images/mob2x/features-bg@2x.png);
   }
 }
@@ -353,6 +353,12 @@ button {
   background-repeat: no-repeat;
 }
 
+.flex-list {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
 .item-title {
   font-size: 14px;
   line-height: 1.43;
@@ -372,6 +378,12 @@ button {
     background-position: 0 281px;
   }
 
+  @media (min-resolution: 192dpi) {
+    .features {
+      background-image: url(../images/tab2x/man-tab@2x.png);
+    }
+  }
+
   .features-title {
     font-size: 24px;
   }
@@ -383,16 +395,23 @@ button {
   }
 
   .features-list {
-    margin-left: 400px;
-    max-width: 297px;
-    flex-wrap: wrap;
+    gap: 50px;
   }
 
-  .features-list-item:last-child,
-  .features-list-item:nth-child(5n) {
-    flex-wrap: wrap;
-    max-width: 100%;
-    flex-direction: row;
+  .features-list-item {
+    margin-left: 368px;
+    max-width: 297px;
+    gap: 13px;
+  }
+
+  .features-list-item.current {
+    margin-left: 0;
+  }
+
+  .flex-list {
+    flex-direction: row-reverse;
+    gap: 71px;
+    justify-content: flex-end;
   }
 
   .item-title {
@@ -406,5 +425,48 @@ button {
 }
 
 @media screen and (min-width: 1280px) {
+  .features {
+    padding: 100px 0;
+    max-width: 1280px;
+    background-image: url(../images/desk/features-bg-desk.png);
+    background-size: cover;
+    background-position: 0 -200px;
+  }
+
+  @media (min-resolution: 192dpi) {
+    .features {
+      background-image: url(../images/desk2x/features-bg-desk@2x.png);
+    }
+  }
+
+  .features-title {
+    margin-bottom: 80px;
+  }
+  .features-text {
+    margin-bottom: 117px;
+    max-width: 855px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .features-list {
+    row-gap: 54px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    column-gap: 454px;
+    max-height: 510px;
+    align-content: center;
+  }
+
+  .features-list-item {
+    max-width: 256px;
+    margin-left: 0;
+    gap: 8px;
+  }
+
+  .flex-list {
+    flex-direction: column;
+    gap: 54px;
+  }
 }
 /* #endregion Features */
