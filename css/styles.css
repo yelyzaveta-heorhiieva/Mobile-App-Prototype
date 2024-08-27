@@ -204,13 +204,33 @@ button {
 .hero-btn {
   margin: 0 auto;
   border-radius: 5px;
-  min-width: 200px;
-  height: 42px;
+  width: 198px;
+  height: 40px;
   font-weight: 700;
   border: none;
   font-size: 16px;
   color: #fff;
+  background-color: transparent;
+  transition: background-color 250ms ease-in-out;
+}
+
+.download-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: linear-gradient(99deg, #00c5eb 0%, #b544fe 100%);
+  max-width: 200px;
+  height: 42px;
+  border-radius: 5px;
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+  background-color: #06071b;
+}
+
+.hero-btn:active {
+  background-color: unset;
 }
 
 .hero-img {
@@ -943,6 +963,9 @@ button {
   height: 42px;
   font-weight: 700;
   font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   background-image: linear-gradient(99deg, #00c5eb 0%, #b544fe 100%);
 }
@@ -974,17 +997,46 @@ button {
   margin-bottom: 14px;
 }
 
-.social-link {
+.social-link-container {
+  border-radius: 100%;
+  background-image: linear-gradient(99deg, #00c5eb 0%, #b544fe 100%);
   width: 40px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 100%;
-  background-image: linear-gradient(99deg, #00c5eb 0%, #b544fe 100%);
 }
-.social-icon {
+
+.social-link {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  transition: background-color 250ms ease-in-out;
+}
+
+.social-icon,
+.social-link:active .social-icon {
+  transition: fill 250ms ease-in-out;
   fill: #fff;
+}
+
+.social-link:active {
+  background-color: unset;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: #06071b;
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+  stroke-width: 2px;
+  stroke: url(#paint0_linear_2680_42);
+  fill: transparent;
 }
 
 .address-list {
