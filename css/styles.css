@@ -496,6 +496,15 @@ button {
   width: 228px;
 }
 
+.download-input:checked + .download-label .label-container {
+  background-color: transparent;
+}
+
+/* .label-container.two {
+  top: 0;
+  left: 50px;
+} */
+
 .file-icon {
   fill: #fff;
 }
@@ -531,10 +540,6 @@ button {
   background-position: center center;
   min-width: 14px;
   height: 14px;
-}
-
-.download-input:checked + .download-label .label-container {
-  background-color: transparent;
 }
 
 .download-text {
