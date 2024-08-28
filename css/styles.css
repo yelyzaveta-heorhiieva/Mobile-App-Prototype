@@ -1331,6 +1331,22 @@ button {
   resize: none;
 }
 
+.contact-input:valid {
+  border: 2px solid green;
+}
+
+.contact-input:invalid {
+  border: 2px solid red;
+}
+
+.contact-input:invalid:focus {
+  border: none;
+}
+
+.contact-input:placeholder-shown {
+  border: none;
+}
+
 .contact-btn {
   border: none;
   border-radius: 5px;
