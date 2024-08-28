@@ -28,10 +28,12 @@
             <nav class="nav">
               <ul class="nav-list">
                 <li><a class="nav-link" href="./index.html">HOME</a></li>
-                <li><a class="nav-link" href="#">FEATURES</a></li>
-                <li><a class="nav-link" href="#">TEAM</a></li>
-                <li><a class="nav-link" href="#">TESTIMONIALS</a></li>
-                <li><a class="nav-link" href="#">CONTACT</a></li>
+                <li><a class="nav-link" href="#features">FEATURES</a></li>
+                <li><a class="nav-link" href="#team">TEAM</a></li>
+                <li>
+                  <a class="nav-link" href="#testimonials">TESTIMONIALS</a>
+                </li>
+                <li><a class="nav-link" href="#contact">CONTACT</a></li>
               </ul>
             </nav>
             <button
@@ -63,10 +65,16 @@
                 <li>
                   <a href="./index.html" class="menu-link current">HOME</a>
                 </li>
-                <li><a href="" class="menu-link">FEATURES</a></li>
-                <li><a href="" class="menu-link">TEAM</a></li>
-                <li><a href="" class="menu-link">TESTIMONIALS</a></li>
-                <li><a href="" class="menu-link">CONTACT</a></li>
+                <li>
+                  <a href="#features" class="menu-link">FEATURES</a>
+                </li>
+                <li><a href="#team" class="menu-link">TEAM</a></li>
+                <li>
+                  <a href="#testimonials" class="menu-link">TESTIMONIALS</a>
+                </li>
+                <li>
+                  <a href="#contact" class="menu-link">CONTACT</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -88,7 +96,13 @@
                 </li>
               </ul>
               <div class="download-btn">
-                <button type="button" class="hero-btn">Download</button>
+                <button
+                  type="button"
+                  class="hero-btn"
+                  onclick="document.getElementById('modal-overflay').classList.add('is-open')"
+                >
+                  Download
+                </button>
               </div>
             </div>
             <picture class="hero-img">
@@ -119,9 +133,13 @@
             </picture>
           </div>
 
-          <div class="modal-overflay is-open">
+          <div class="modal-overflay" id="modal-overflay">
             <div class="overflay">
-              <button type="button" class="close-btn download">
+              <button
+                type="button"
+                class="close-btn download"
+                onclick="document.getElementById('modal-overflay').classList.remove('is-open')"
+              >
                 <svg class="close-icon" width="20" height="20">
                   <use href="./images/icons.svg#close"></use>
                 </svg>
@@ -134,26 +152,19 @@
                   name="download"
                   value="free"
                   id="free-download"
+                  checked
                 />
 
                 <label class="download-label" for="free-download"
-                  ><div class="label-container">
+                  ><span class="label-container">
                     <svg class="file-icon" width="80" height="106">
                       <use href="./images/icons.svg#file-load"></use>
                     </svg>
-                    <p class="label-title">Download free plan</p>
-                    <ul class="label-list">
-                      <li>
-                        <p class="label-text">Basic functionality</p>
-                      </li>
-                      <li>
-                        <p class="label-text">Limited access</p>
-                      </li>
-                      <li>
-                        <p class="label-text">Community support</p>
-                      </li>
-                    </ul>
-                  </div>
+                    <span class="label-title">Download free plan</span>
+                    <span class="label-text">Basic functionality</span>
+                    <span class="label-text">Limited access</span>
+                    <span class="label-text">Community support</span>
+                  </span>
                 </label>
 
                 <input
@@ -165,25 +176,18 @@
                 />
 
                 <label class="download-label" for="download">
-                  <div class="label-container">
+                  <span class="label-container">
                     <svg class="file-icon" width="80" height="106">
                       <use href="./images/icons.svg#file-load"></use>
                     </svg>
-                    <p class="label-title">Download for 20$</p>
-                    <ul class="label-list">
-                      <li>
-                        <p class="label-text">Ad-free experience</p>
-                      </li>
-                      <li>
-                        <p class="label-text">Unlock exclusive features</p>
-                      </li>
-                      <li>
-                        <p class="label-text">
-                          Content for the ultimate mobile experience
-                        </p>
-                      </li>
-                    </ul>
-                  </div>
+                    <span class="label-title">Download for 20$</span>
+                    <span class="label-text">Ad-free experience</span>
+                    <span class="label-text">Unlock exclusive features</span>
+
+                    <span class="label-text">
+                      Content for the ultimate mobile experience
+                    </span>
+                  </span>
                 </label>
               </form>
               <p class="download-text">
@@ -292,7 +296,7 @@
         </section>
       </div>
 
-      <section class="features">
+      <section class="features" id="features">
         <div class="container">
           <h2 class="features-title">KEY FEATURES</h2>
           <p class="features-text">
@@ -426,7 +430,7 @@
         </div>
       </section>
 
-      <section class="team">
+      <section class="team" id="team">
         <div class="container">
           <h2 class="team-title">OUR TEAM</h2>
           <p class="team-text">
@@ -581,7 +585,7 @@
         </div>
       </section>
 
-      <section class="testimonials">
+      <section class="testimonials" id="testimonials">
         <div class="container">
           <h2 class="testimonials-title">WHAT OUR COSTUMER’S SAY</h2>
           <img
@@ -623,7 +627,7 @@
         </div>
       </section>
 
-      <section class="contact">
+      <section class="contact" id="contact">
         <div class="gradient-footer">
           <div class="container">
             <h2 class="contact-title">CONTACT US</h2>
@@ -634,17 +638,20 @@
                   class="contact-input"
                   placeholder="Name"
                   name="user-name"
+                  required
                 />
                 <input
                   type="email"
                   class="contact-input"
                   placeholder="Email"
                   name="user-email"
+                  required
                 />
                 <textarea
                   class="contact-input text"
                   placeholder="Message"
                   name="user-message"
+                  required
                 ></textarea>
                 <button type="submit" class="contact-btn">SUBMIT</button>
               </form>
